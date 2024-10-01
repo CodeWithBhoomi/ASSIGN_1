@@ -1,8 +1,8 @@
 # ASSIGN_1
 
-# My Portfolio Website
+# My Website
 
-Welcome to my portfolio website repository! This website showcases my skills, projects, and experiences in web development and software engineering. 
+Welcome to my website repository! This website showcases the skill management...
 
 ## Live Demo
 
@@ -12,7 +12,6 @@ You can view the live version of the website here: [bhoomisharma.netlify.app](ht
 
 - [Technologies Used](#technologies-used)
 - [Features](#features)
-- [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
 
@@ -28,8 +27,3 @@ You can view the live version of the website here: [bhoomisharma.netlify.app](ht
 - Hover animations
 - Contact form
 
-## Installation
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/your-repo-name.git
