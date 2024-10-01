@@ -1,0 +1,364 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(90deg, #11998e 0%, #38ef7d 100%);
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    font-size: 2rem;
+    color: white;
+    letter-spacing: 1px;
+    transition: transform 0.3s;
+}
+
+h1:hover {
+    transform: scale(1.1);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #38ef7d;
+    transform: scale(1.1);
+}
+
+/* Gradient hover underline effect */
+nav ul li::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #38ef7d, #11998e);
+    top: 100%;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease-in-out;
+}
+
+nav ul li:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Global Image Styles */
+img {
+    width: 100%;            /* Full width for responsiveness */
+    height: auto;          /* Maintain aspect ratio */
+    display: block;        /* Remove extra space below images */
+}
+
+/* Banner Image Styles */
+.main-image {
+    height: 400px;         /* Height for the main banner image */
+    object-fit: cover;     /* Cover the area while maintaining aspect ratio */
+}
+
+.about-image,
+.goals-image {
+    height: 300px;         /* Height for about and goals images */
+    object-fit: cover;     /* Cover the area while maintaining aspect ratio */
+}
+
+/* Section Styles */
+section {
+    padding: 60px 20px;
+    background: #fff;
+}
+
+section:nth-child(odd) {
+    background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+    color: white;
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.2rem;
+    color: #333;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+}
+
+section p,
+ul {
+    max-width: 900px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* About Page - Section Styles */
+#story,
+#principles,
+#team {
+    padding: 60px 20px;
+    background: #fff;
+}
+
+#story img,
+#principles img,
+#team img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin: 20px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#principles .principle,
+#team .team-member {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+#principles .principle-image,
+#team .team-image {
+    width: 200px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#principles .principle:nth-child(even),
+#team .team-member:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+#principles h3,
+#team h3 {
+    margin-top: 0;
+    color: #11998e;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+
+#team .team-member {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+#team .team-image {
+    width: 150px;
+}
+
+#story h2,
+#principles h2,
+#team h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.2rem;
+    color: #333;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+#story h2::after,
+#principles h2::after,
+#team h2::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, #11998e, #38ef7d);
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+}
+
+#story p,
+#principles p,
+#team p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #444;
+}
+
+#story p {
+    text-align: justify;
+}
+
+/* Animation on Scroll */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#story,
+#principles,
+#team {
+    animation: fadeInUp 1s ease-in-out both;
+}
+
+/* Button Styles */
+button {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 1rem;
+    color: white;
+    background: linear-gradient(90deg, #ff6a00 0%, #ee0979 100%);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.1);
+    background: linear-gradient(90deg, #ee0979 0%, #ff6a00 100%);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+#story button,
+#team button {
+    margin-top: 20px;
+}
+
+/* Contact Form Styles */
+form {
+    max-width: 600px;
+    margin: 30px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #6a11cb;
+    outline: none;
+}
+
+textarea {
+    resize: none;
+    height: 150px;
+}
+
+/* Footer Styles */
+footer {
+    background: linear-gradient(90deg, #11998e 0%, #38ef7d 100%);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer p {
+    margin-bottom: 0;
+    font-size: 1rem;
+}
+
+footer p a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+footer p a:hover {
+    color: #38ef7d;
+}
+
+/* Hover Animation on Section Titles */
+section h2:hover,
+#story h2:hover,
+#principles h2:hover,
+#team h2:hover {
+    color: #38ef7d;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+    }
+
+   
